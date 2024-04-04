@@ -1,6 +1,7 @@
 package com.tsm.santanderdevweek2024.controllers;
 
 import com.tsm.santanderdevweek2024.domain.entities.Champion;
+import com.tsm.santanderdevweek2024.domain.entities.dtos.ChampionDto;
 import com.tsm.santanderdevweek2024.services.impl.ChampionServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ public class ChampionResource {
     private ChampionServiceImpl championService;
 
     @GetMapping
-    public ResponseEntity<List<Champion>> findAll() {
+    public ResponseEntity<List<ChampionDto>> findAll() {
         var list = championService.findAll();
         return ResponseEntity.ok().body(list);
     }
